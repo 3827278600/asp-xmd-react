@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss}\"",
-    "preview": "vite preview",
+    "preinstall": "node scripts/check-package-manager.js && node scripts/preinstall.js",
+    "dev": "node scripts/check-package-manager.js && vite",
+    "build": "node scripts/check-package-manager.js && tsc -b && vite build",
+    "lint": "node scripts/check-package-manager.js && eslint .",
+    "lint:fix": "node scripts/check-package-manager.js && eslint . --fix",
+    "format": "node scripts/check-package-manager.js && prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,scss}\"",
+    "preview": "node scripts/check-package-manager.js && vite preview",
     "prepare": "husky install"
   },
   "dependencies": {
