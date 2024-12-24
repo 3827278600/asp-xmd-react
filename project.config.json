@@ -1,6 +1,7 @@
 {
   "packageManager": {
-    "type": "yarn",
-    "version": ">=1.22.0"
+    "type": "npm",
+    "version": ">=8.0.0",
+    "strict": true
   }
 }
