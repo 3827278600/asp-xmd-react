@@ -6,7 +6,7 @@ import reactHooks from 'eslint-plugin-react-hooks';
 
 export default tseslint.config(
   {
-    ignores: ['dist', 'node_modules', '*.min.*', '*.d.ts'],
+    ignores: ['dist', 'node_modules', '*.min.*', '*.d.ts', 'vite.config.ts', 'build', 'coverage'],
   },
   {
     files: ['**/*.{js,jsx,ts,tsx}'],
@@ -27,7 +27,7 @@ export default tseslint.config(
     },
     plugins: {
       '@typescript-eslint': tseslint.plugin,
-      react: react,
+      react,
       'react-hooks': reactHooks,
     },
     settings: {
@@ -44,21 +44,6 @@ export default tseslint.config(
         {
           argsIgnorePattern: '^_',
           varsIgnorePattern: '^_',
-        },
-      ],
-      '@typescript-eslint/type-annotation-spacing': 'error',
-      '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
-      '@typescript-eslint/member-delimiter-style': [
-        'error',
-        {
-          multiline: {
-            delimiter: 'semi',
-            requireLast: true,
-          },
-          singleline: {
-            delimiter: 'semi',
-            requireLast: false,
-          },
         },
       ],
 

@@ -5,25 +5,28 @@ export default {
       2,
       'always',
       [
-        'feat', // 新功能
+        'feat', // 新功能(feature)
         'fix', // 修复bug
-        'docs', // 文档修改
-        'style', // 代码格式修改，非css
-        'refactor', // 代码重构
-        'perf', // 优化相关
-        'test', // 测试用例修改
-        'chore', // 其他修改
-        'revert', // 回滚到上一个版本
-        'build', // 编译相关的修改
-        'ci', // CI配置相关
+        'perf', // 性能优化
+        'style', // 代码格式(不影响代码运行的变动)
+        'docs', // 文档(documentation)
+        'test', // 增加测试
+        'refactor', // 重构(既不是增加feature，也不是修复bug)
+        'build', // 打包
+        'ci', // 持续集成
+        'chore', // 构建过程或辅助工具的变动
+        'revert', // 回退
+        'wip', // 开发中
+        'workflow', // 工作流
+        'types', // 类型定义文件更改
       ],
     ],
-    'type-case': [2, 'always', 'lower-case'], // type必须小写
-    'type-empty': [2, 'never'], // type不能为空
-    'scope-empty': [0], // scope可以为空
-    'scope-case': [0], // scope格式不限制
-    'subject-full-stop': [0], // subject结尾不限制
-    'subject-case': [0], // subject格式不限制
-    'header-max-length': [2, 'always', 72], // header最大长度
+    'type-case': [2, 'always', 'lower-case'],
+    'type-empty': [2, 'never'],
+    'scope-empty': [0],
+    'scope-case': [0],
+    'subject-full-stop': [0],
+    'subject-case': [0],
+    'header-max-length': [2, 'always', 72],
   },
 };
