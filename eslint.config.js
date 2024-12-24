@@ -3,6 +3,7 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
+import reactRefresh from 'eslint-plugin-react-refresh';
 
 export default tseslint.config(
   {
@@ -29,6 +30,7 @@ export default tseslint.config(
       '@typescript-eslint': tseslint.plugin,
       react,
       'react-hooks': reactHooks,
+      'react-refresh': reactRefresh,
     },
     settings: {
       react: {
@@ -44,6 +46,27 @@ export default tseslint.config(
         {
           argsIgnorePattern: '^_',
           varsIgnorePattern: '^_',
+        },
+      ],
+
+      ...reactHooks.configs.recommended.rules,
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+
+      // 基础规则
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'no-debugger': 'warn',
+      'no-var': 'error',
+      'prefer-const': 'error',
+
+      // TypeScript 相关
+      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/explicit-function-return-type': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          varsIgnorePattern: '^React$', // 只允许 React 变量未使用
+          argsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
         },
       ],
 
